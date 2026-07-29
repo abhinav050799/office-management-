@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Attendance;
+use App\Models\User;
+use Illuminate\Support\Carbon;
+
+class AttendanceController extends Controller
+{
+    public function userAccid(){
+        $id = session('id');
+    $userData = User::where('id',$id)->first();
+    return $userData;
+    }
+    public function timein(){
+    $this->userAccid;
+    Attendance::insert([
+        'emp_name' => $userData->name,
+        'emp_id' => $userData->account_id,
+        'timein' => Carbon::now()->format('h:i A'),
+        'date' => Carbon::today()->format('d/m/Y'),
+        "created_at" => now(),
+        "updated_at" => now(),
+    ]);
+    return back()->with('success', 'Time-in successfully');
+    }
+
+    public function timeout(){
+        $id = session('id');
+        User::where('id',)
+    }
+}
