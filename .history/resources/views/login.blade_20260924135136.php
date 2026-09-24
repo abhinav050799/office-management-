@@ -627,15 +627,16 @@
           {{ session('success') }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        @else
+        @elseif(session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ session('error') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
       @endif
 
 
         <!-- Tabs -->
-        <div class="auth-tabs">
-          <button class="tab-btn active" data-tab="login">Log In</button>
-          <button class="tab-btn" data-tab="register">Register</button>
-        </div>
+     
 
         <!-- ====== LOGIN FORM ====== -->
         <div id="login-section" class="form-section active">
@@ -646,14 +647,16 @@
             <p>Log in to your Stark Industries account</p>
           </div>
 
-          <form>
+          <form method="POST" action="{{ route('loginUser') }}" enctype="multipart/form-data">
+            @csrf
+
             <div class="row g-3">
               <!-- Email -->
               <div class="col-12">
                 <label class="form-label"><i class="bi bi-envelope"></i> Email</label>
                 <div class="input-group-custom">
                   <span class="input-icon"><i class="bi bi-envelope"></i></span>
-                  <input type="email" class="form-control" placeholder="tony@stark.com" required />
+                  <input type="email"  name="email" id="email" class="form-control" placeholder="tony@stark.com" required />
                 </div>
               </div>
 
@@ -662,7 +665,7 @@
                 <label class="form-label"><i class="bi bi-lock"></i> Password</label>
                 <div class="input-group-custom">
                   <span class="input-icon"><i class="bi bi-key"></i></span>
-                  <input type="password" class="form-control" placeholder="••••••••" required />
+                  <input type="password" name="password" id="password" class="form-control" placeholder="••••••••" required />
                 </div>
               </div>
 

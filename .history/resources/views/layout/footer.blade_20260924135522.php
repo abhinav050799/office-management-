@@ -10,7 +10,7 @@
 
         <br>
 
-        © 2026 All Rights Reserved
+        © {{ date('Y') }} All Rights Reserved
 
 
     </footer>
@@ -24,3 +24,17 @@
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+
+<script>
+
+ClassicEditor
+    .create(document.querySelector('#notificationMessage'))
+    .then(editor => {
+        console.log('Editor ready');
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
+</script>

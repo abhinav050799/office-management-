@@ -10,7 +10,7 @@
 
         <br>
 
-        © {{ date('Y') }} All Rights Reserved
+        © {{  }} All Rights Reserved
 
 
     </footer>

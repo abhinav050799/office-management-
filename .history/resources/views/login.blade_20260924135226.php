@@ -593,30 +593,6 @@
         <h1>
           Stark<br /><span>Industries</span>
         </h1>
-        <div class="tagline">
-          <i class="bi bi-hdd-stack me-2" style="color: #5b8cff;"></i>
-          Office Management · next gen
-        </div>
-        <div class="office-badge">
-          <i class="bi bi-building"></i>
-          <span>v3.0 · enterprise</span>
-          <i class="bi bi-shield-check ms-2" style="color: #5b8cff;"></i>
-        </div>
-
-        <div class="brand-stats">
-          <div class="stat-item">
-            <span class="number">12k+</span>
-            <span class="label">Employees</span>
-          </div>
-          <div class="stat-item">
-            <span class="number">98%</span>
-            <span class="label">Satisfaction</span>
-          </div>
-          <div class="stat-item">
-            <span class="number">24/7</span>
-            <span class="label">Support</span>
-          </div>
-        </div>
       </div>
 
       <!-- RIGHT PANEL : Login + Register Tabs -->
@@ -634,13 +610,6 @@
         </div>
       @endif
 
-
-        <!-- Tabs -->
-        <div class="auth-tabs">
-          <button class="tab-btn active" data-tab="login">Log In</button>
-          <button class="tab-btn" data-tab="register">Register</button>
-        </div>
-
         <!-- ====== LOGIN FORM ====== -->
         <div id="login-section" class="form-section active">
           <div class="form-header">
@@ -650,7 +619,7 @@
             <p>Log in to your Stark Industries account</p>
           </div>
 
-          <form method="POST" action="{{ route('login') }}" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('loginUser') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row g-3">

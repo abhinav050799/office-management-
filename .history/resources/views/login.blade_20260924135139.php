@@ -634,13 +634,6 @@
         </div>
       @endif
 
-
-        <!-- Tabs -->
-        <div class="auth-tabs">
-          <button class="tab-btn active" data-tab="login">Log In</button>
-          <button class="tab-btn" data-tab="register">Register</button>
-        </div>
-
         <!-- ====== LOGIN FORM ====== -->
         <div id="login-section" class="form-section active">
           <div class="form-header">
@@ -650,7 +643,7 @@
             <p>Log in to your Stark Industries account</p>
           </div>
 
-          <form method="POST" action="{{ route('login') }}" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('loginUser') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row g-3">

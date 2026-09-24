@@ -10,7 +10,7 @@
 
         <br>
 
-        © 2026 All Rights Reserved
+        © {{ date('Y') }} All Rights Reserved
 
 
     </footer>
